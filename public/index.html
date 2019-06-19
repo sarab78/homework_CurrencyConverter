@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vue</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/bundle.js"></script>
+</head>
+<body>
+  <h1>Currency Converter</h1>
+		<div id="app">
+      <label for="">Enter your amount:</label>
+      <input type="number" v-model.number="baseAmount">
+      <select v-model="selectedCurrency">
+        <option v-for="(rate, currency) in rates">{{currency}}</option>
+
+</select>
+<p v-if="selectedCurrency && baseAmount > 0">{{baseAmount}} Euros = {{convertFromEuros | twoDecimalPlaces}} {{selectedCurrency}}</p>
+
+
+      </div>
+      </body>
+      </html>
